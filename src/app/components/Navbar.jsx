@@ -4019,7 +4019,7 @@ export default function Navbar() {
             "
                 className="text-white hover:bg-green-700 px-3 py-2 rounded"
               >
-                New Arrivals
+                Products
               </Link>
 
               {/* Category Dropdown in Mobile Menu */}
