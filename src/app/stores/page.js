@@ -481,7 +481,122 @@
 //   );
 // }
 
+// "use client";
+
+// // import CategorySection from "./components/CategorySection";
+// // import PopularProducts from "./components/PopularProducts";
+// // import NewArrivals from "./components/NewArrivals";
+// // import DispatchOrder from "./components/DispatchOrder";
+// import Navbar from "../components/Navbar";
+// import Footer from "../components/Footer";
+// // import ScrollToTopButton from "./components/ScrollToTopButton";
+// // import FAQSection from "./components/FAQSection";
+// import { useEffect, useState } from "react";
+// import { auth } from "../lib/firebase"; // Ensure you have Firebase initialized
+// import { onAuthStateChanged, signOut } from "firebase/auth";
+// import { useRouter } from "next/navigation";
+
+// export default function Stores() {
+//   const [user, setUser] = useState(null);
+//   const [loading, setLoading] = useState(true);
+//   const router = useRouter();
+
+//   useEffect(() => {
+//     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+//       setUser(currentUser);
+//       setLoading(false); // Stop loading once we know the auth state
+//     });
+//     return () => unsubscribe();
+//   }, []);
+
+//   const handleWhatsAppClick = (whatsappNumber) => {
+//     if (!user) {
+//       router.push("/authentication");
+//     } else {
+//       window.open(`https://wa.me/${whatsappNumber}`, "_blank");
+//     }
+//   };
+
+//   const handleLogout = async () => {
+//     try {
+//       await signOut(auth);
+//       router.push("/authentication");
+//     } catch (error) {
+//       console.error("Error logging out:", error);
+//     }
+//   };
+
+//   const stores = [
+//     {
+//       name: "Store 1",
+//       description: "Description of Store 1",
+//       whatsapp: "your-store-whatsapp-number-1",
+//     },
+//     {
+//       name: "Store 2",
+//       description: "Description of Store 2",
+//       whatsapp: "your-store-whatsapp-number-2",
+//     },
+//     {
+//       name: "Store 3",
+//       description: "Description of Store 3",
+//       whatsapp: "your-store-whatsapp-number-3",
+//     },
+//   ];
+
+//   if (loading) {
+//     return <p>Loading...</p>; // Display this while loading auth state
+//   }
+
+//   return (
+//     <div className="container mx-auto px-4 py-6">
+//       <Navbar />
+
+//       <header className="mb-8">
+//         <h1 className="text-3xl font-bold">Available Stores</h1>
+//       </header>
+//       <section>
+//         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+//           {stores.map((store, index) => (
+//             <div
+//               key={index}
+//               className="border p-4 rounded shadow hover:shadow-lg transition-shadow"
+//             >
+//               <h3 className="text-lg font-semibold mb-2">{store.name}</h3>
+//               <p className="mb-4">{store.description}</p>
+//               <button
+//                 onClick={() => handleWhatsAppClick(store.whatsapp)}
+//                 className="bg-green-600 text-white py-2 px-4 rounded transition hover:bg-green-700"
+//               >
+//                 Contact on WhatsApp
+//               </button>
+//             </div>
+//           ))}
+//         </div>
+//       </section>
+//       {user && (
+//         <div className="mt-4">
+//           <button
+//             onClick={handleLogout}
+//             className="bg-red-600 text-white py-2 px-4 rounded transition hover:bg-red-700"
+//           >
+//             Logout
+//           </button>
+//         </div>
+//       )}
+
+//       {/* <ScrollToTopButton /> */}
+//       <Footer />
+//     </div>
+
+//   );
+
+// }
+
 "use client";
+
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 import { useEffect, useState } from "react";
 import { auth } from "../lib/firebase"; // Ensure you have Firebase initialized
 import { onAuthStateChanged, signOut } from "firebase/auth";
@@ -540,39 +655,45 @@ export default function Stores() {
   }
 
   return (
-    <div className="container mx-auto px-4 py-6">
-      <header className="mb-8">
-        <h1 className="text-3xl font-bold">Available Stores</h1>
-      </header>
-      <section>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {stores.map((store, index) => (
-            <div
-              key={index}
-              className="border p-4 rounded shadow hover:shadow-lg transition-shadow"
-            >
-              <h3 className="text-lg font-semibold mb-2">{store.name}</h3>
-              <p className="mb-4">{store.description}</p>
-              <button
-                onClick={() => handleWhatsAppClick(store.whatsapp)}
-                className="bg-green-600 text-white py-2 px-4 rounded transition hover:bg-green-700"
+    <div className="flex flex-col min-h-screen">
+      <Navbar />
+
+      <main className="flex-grow container mx-auto px-4 py-6 pt-32">
+        <header className="mb-8">
+          <h1 className="text-3xl font-bold">Available Stores</h1>
+        </header>
+        <section>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {stores.map((store, index) => (
+              <div
+                key={index}
+                className="border p-4 rounded shadow hover:shadow-lg transition-shadow"
               >
-                Contact on WhatsApp
-              </button>
-            </div>
-          ))}
-        </div>
-      </section>
-      {user && (
-        <div className="mt-4">
-          <button
-            onClick={handleLogout}
-            className="bg-red-600 text-white py-2 px-4 rounded transition hover:bg-red-700"
-          >
-            Logout
-          </button>
-        </div>
-      )}
+                <h3 className="text-lg font-semibold mb-2">{store.name}</h3>
+                <p className="mb-4">{store.description}</p>
+                <button
+                  onClick={() => handleWhatsAppClick(store.whatsapp)}
+                  className="bg-green-600 text-white py-2 px-4 rounded transition hover:bg-green-700"
+                >
+                  Contact on WhatsApp
+                </button>
+              </div>
+            ))}
+          </div>
+        </section>
+        {user && (
+          <div className="mt-4">
+            <button
+              onClick={handleLogout}
+              className="bg-red-600 text-white py-2 px-4 rounded transition hover:bg-red-700"
+            >
+              Logout
+            </button>
+          </div>
+        )}
+      </main>
+
+      <Footer />
     </div>
   );
 }

@@ -695,7 +695,7 @@ const NewArrivals = () => {
   return (
     <section id="new-arrivals" className="pt-16 -mt-16 relative">
       <div className="bg-[#dcb373] md:py-4 py-2  flex justify-between items-center md:px-6 px-4 ">
-        <h2 className="text-xl font-bold text-white">New Arrivals</h2>
+        <h2 className="text-xl font-bold text-white">New Stores</h2>
         {
           /* <Link
           href="/new-arrivals"
