@@ -4,6 +4,7 @@
 import { useRouter } from "next/router";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import Image from "next/image";
 
 const products = [
   {
@@ -46,7 +47,9 @@ const ProductPage = () => {
       <Navbar />
       <div className="max-w-6xl mx-auto p-8">
         <h1 className="text-2xl font-bold mb-4">{product.name}</h1>
-        <img src={product.image} alt={product.name} className="w-full mb-4" />
+        {/* <img src={product.image} alt={product.name} className="w-full mb-4" /> */}
+
+        <Image src={imageSrc} alt="Product Image" width={500} height={500} />
         <p className="text-lg mb-4">{product.description}</p>
         <p className="text-xl font-bold mb-4">${product.price}</p>
         <button className="bg-blue-500 text-white p-2 rounded">
