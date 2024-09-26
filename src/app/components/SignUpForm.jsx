@@ -1601,7 +1601,7 @@ const SignUpForm = ({ toggleMode }) => {
   return (
     <div className="w-full max-w-[85vw] lg:max-w-md p-8 space-y-4 bg-white rounded-xl shadow-lg">
       <h2 className="text-lg lg:text-2xl font-bold text-center text-[#003366] ">
-        Sign Up
+        Create a New Account
       </h2>
       <form onSubmit={handleSignUp} className="space-y-4 lg:space-y-6">
         <div>
@@ -1663,7 +1663,7 @@ const SignUpForm = ({ toggleMode }) => {
           )}
         </button>
       </form>
-      <div className="flex items-center justify-center space-x-4 my-4">
+      {/* <div className="flex items-center justify-center space-x-4 my-4">
         <div className="h-px w-16 bg-gray-300"></div>
         <span className="text-sm text-gray-500">OR</span>
         <div className="h-px w-16 bg-gray-300"></div>
@@ -1677,7 +1677,7 @@ const SignUpForm = ({ toggleMode }) => {
         ) : (
           <div className="text-white text-center h-5">Sign Up with Google</div>
         )}
-      </button>
+      </button> */}
       {/* <p className="text-sm text-center text-gray-500">
         Already have an account?{" "}
         <button
