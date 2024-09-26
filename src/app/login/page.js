@@ -1,37 +1,3 @@
-// "use client";
-// import { Swiper, SwiperSlide } from "swiper/react";
-// import "swiper/css";
-
-// export default function HeroSlider() {
-//   return (
-//     <div className="w-full h-96 md:h-[500px]">
-//       <Swiper
-//         spaceBetween={50}
-//         slidesPerView={1}
-//         autoplay={{ delay: 3000 }}
-//         loop={true}
-//         className="w-full h-full"
-//       >
-//         <SwiperSlide>
-//           <div className="bg-green-200 w-full h-full flex items-center justify-center">
-//             <h2 className="text-4xl font-bold">50% OFF - Vegetables Sale</h2>
-//           </div>
-//         </SwiperSlide>
-//         <SwiperSlide>
-//           <div className="bg-blue-200 w-full h-full flex items-center justify-center">
-//             <h2 className="text-4xl font-bold">Fresh Fruits Available</h2>
-//           </div>
-//         </SwiperSlide>
-//         <SwiperSlide>
-//           <div className="bg-yellow-200 w-full h-full flex items-center justify-center">
-//             <h2 className="text-4xl font-bold">Bakery Deals</h2>
-//           </div>
-//         </SwiperSlide>
-//       </Swiper>
-//     </div>
-//   );
-// }
-
 "use client";
 import Image from "next/image";
 import Link from "next/link";

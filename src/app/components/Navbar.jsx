@@ -3734,24 +3734,19 @@ export default function Navbar() {
             Home
           </Link>
           {/* <Link
-            href="/shop"
+            href="/stores"
             className="text-white hover:bg-green-700 px-3 py-2 rounded"
           >
-            Shop
+            Stores
           </Link> */}
-          {/* <Link
-            href="#new-arrivals"
-            className="text-white hover:bg-green-700 px-3 py-2 rounded"
-          >
-            New Arrivals
-          </Link> */}
+
           <Link
             href="/products"
             className="text-white hover:bg-green-700 px-3 py-2 rounded"
           >
             Products
           </Link>
-          {/* Help Dropdown */}
+
           <div className="relative inline-block">
             <button
               onClick={() => setIsHelpOpen(!isHelpOpen)}
@@ -3797,19 +3792,6 @@ export default function Navbar() {
           </div>
         </div>
 
-        {/* Right Section: Cart Icon and User Icon */}
-        {/* <div className="flex items-center space-x-4">
-          <div className="relative">
-            <ShoppingCartIcon className="w-6 h-6" />
-            <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs px-2 py-0.5 rounded-full">
-              0
-            </span>
-          </div>
-          <a href="/login" className="flex items-center">
-            <UserIcon className="w-6 h-6" />
-          </a>
-        </div>
-      </div> */}
         {/* Right Section: Cart Icon and User Icon */}
         <div className="flex items-center space-x-4">
           <div className="relative">
@@ -3890,97 +3872,7 @@ export default function Navbar() {
           </div>
         </div>
       </div>
-      {/* Mobile Dropdown Menu */}
-      {/* {menuOpen && (
-        <div className="absolute top-16 left-0 right-0 bg-green-600 z-50">
-          <div className="flex flex-col space-y-2 p-4">
-            <div className="relative">
-              <button
-                onClick={() => setIsCategoryOpen(!isCategoryOpen)}
-                className="flex items-center bg-green-800 px-4 py-2 rounded w-full"
-              >
-                Category
-                <ChevronDownIcon className="w-5 h-5 ml-2" />
-              </button>
-              {isCategoryOpen && (
-                <div className="bg-white text-black mt-2 py-2 w-full shadow-lg">
-                  <a href="#" className="block px-4 py-2 hover:bg-gray-100">
-                    Beverages
-                  </a>
-                  <a href="#" className="block px-4 py-2 hover:bg-gray-100">
-                    Groceries
-                  </a>
-                  <a href="#" className="block px-4 py-2 hover:bg-gray-100">
-                    Toiletries
-                  </a>
-                </div>
-              )}
-            </div>
-            <Link
-              href="/"
-              className="text-white hover:bg-green-500 px-4 py-2 rounded"
-            >
-              Home
-            </Link>
-            <Link
-              href="/shop"
-              className="text-white hover:bg-green-500 px-4 py-2 rounded"
-            >
-              Shop
-            </Link>
-            <Link
-              href="#new-arrivals"
-              className="text-white hover:bg-green-500 px-4 py-2 rounded"
-            >
-              New Arrivals
-            </Link>
-            {/* Help Dropdown for Mobile */}
-      {/* <div className="relative">
-              <button
-                onClick={() => setIsHelpOpen(!isHelpOpen)}
-                className="flex items-center bg-green-800 px-4 py-2 rounded w-full"
-              >
-                Help
-                <ChevronDownIcon className="w-5 h-5 ml-2" />
-              </button>
-              {isHelpOpen && (
-                <div className="bg-white text-black mt-2 py-2 w-full shadow-lg">
-                  <Link
-                    href="/faqs"
-                    className="block px-4 py-2 hover:bg-gray-100"
-                  >
-                    FAQs
-                  </Link>
-                  <Link
-                    href="/place-order"
-                    className="block px-4 py-2 hover:bg-gray-100"
-                  >
-                    Place an Order
-                  </Link>
-                  <Link
-                    href="/report-order"
-                    className="block px-4 py-2 hover:bg-gray-100"
-                  >
-                    Report an Order
-                  </Link>
-                  <Link
-                    href="/contact-us"
-                    className="block px-4 py-2 hover:bg-gray-100"
-                  >
-                    Contact Us
-                  </Link>
-                  <Link
-                    href="/payment-options"
-                    className="block px-4 py-2 hover:bg-gray-100"
-                  >
-                    Payment Options
-                  </Link>
-                </div>
-              )}
-            </div>
-          </div> */}
-      {/* </div> */}
-      {/* )} */}
+
       {menuOpen && (
         <div className="fixed inset-0 z-50 bg-[#557C56] transition-transform transform translate-x-0 duration-300 ease-in-out">
           <div className="flex flex-col space-y-2 p-4 h-full overflow-y-auto">
@@ -4000,20 +3892,7 @@ export default function Navbar() {
               >
                 Home
               </Link>
-              {/* <Link
-                href="/shop"
-                className="text-white hover:bg-[#3e9141] px-3 py-2 rounded w-full text-center"
-                onClick={handleLinkClick}
-              >
-                Shop
-              </Link> */}
-              {/* <Link
-                href="#new-arrivals"
-                className="text-white hover:bg-green-700 px-3 py-2 rounded w-full text-center"
-                onClick={handleLinkClick}
-              >
-                New Arrivals
-              </Link> */}
+
               <Link
                 href="/products
             "
@@ -4060,16 +3939,6 @@ export default function Navbar() {
 
               {/* Help Dropdown in Mobile Menu */}
               <div className="relative w-full">
-                {/* <button
-                  onClick={() => {
-                    handleLinkClick();
-                    setIsHelpOpen(!isHelpOpen);
-                  }}
-                  className="bg-green-800 px-4 py-2 mt-2 rounded flex items-center justify-center w-full text-white hover:bg-green-700"
-                >
-                  Help
-                  <ChevronDownIcon className="w-5 h-5 inline ml-1" />
-                </button> */}
                 <button
                   onClick={() => setIsHelpOpen(!isHelpOpen)}
                   className="bg-green-800 px-4 py-2 mt-2 rounded flex items-center justify-center w-full text-white hover:bg-green-700"
@@ -4173,8 +4042,7 @@ export default function Navbar() {
           </div>
         </div>
       )}
-      {/* Search Input for Mobile */}
-      {/* Full-Screen Search Bar for Mobile */}
+
       {searchOpen && (
         <div
           className="fixed inset-0 z-50 bg-white p-4 flex flex-col"
