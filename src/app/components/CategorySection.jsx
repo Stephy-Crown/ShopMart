@@ -629,7 +629,7 @@ const categories = [
 
 const CategorySection = () => {
   return (
-    <section className="py-8 px-3 lg:px-12 bg-[#f7f5f4]">
+    <section className="py-8 pt-0 px-3 lg:px-12 bg-[#f7f5f4]">
       <h2 className="text-3xl font-semibold text-center mb-8">
         Shop by Category
       </h2>

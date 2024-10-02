@@ -217,11 +217,93 @@ import FAQSection from "./components/FAQSection";
 import { auth } from "../app/lib/firebase"; // Adjust the path to your Firebase configuration
 import HeroSection from "./components/HeroSlider";
 import CustomHeroSection from "./components/CustomHeroSection";
+import ConnectWithBusinesses from "./components/ConnectWithBusinesses";
 import { fetchUserProfile } from "../app/lib/user"; // Import the fetchUserProfile function
 
 export default function Home() {
   const [user, setUser] = useState(null);
   const [userProfile, setUserProfile] = useState(null);
+
+  // const stores = [
+  //   {
+  //     id: 1,
+  //     name: "XYZ Electronics",
+  //     category: "Electronics",
+  //     description: "Best deals on electronics",
+  //     whatsappNumber: "1234567890",
+  //     image: "/images/store1.jpg",
+  //   },
+  //   {
+  //     id: 1,
+  //     name: "XYZ Electronics",
+  //     category: "Electronics",
+  //     description: "Best deals on electronics",
+  //     whatsappNumber: "1234567890",
+  //     image: "/images/store1.jpg",
+  //   },
+  //   // {
+  //   //   id: 1,
+  //   //   name: "XYZ Electronics",
+  //   //   category: "Electronics",
+  //   //   description: "Best deals on electronics",
+  //   //   whatsappNumber: "1234567890",
+  //   //   image: "/images/store1.jpg",
+  //   // },
+  //   {
+  //     id: 2,
+  //     name: "Grocery Hub",
+  //     category: "Groceries",
+  //     description: "Fresh groceries at your doorstep",
+  //     whatsappNumber: "0987654321",
+  //     image: "/images/store2.jpg",
+  //   },
+
+  //   {
+  //     id: 2,
+  //     name: "Grocery Hub",
+  //     category: "Groceries",
+  //     description: "Fresh groceries at your doorstep",
+  //     whatsappNumber: "0987654321",
+  //     image: "/images/store2.jpg",
+  //   },
+  //   // Add more stores here...
+  // ];
+
+  const stores = [
+    {
+      id: 1,
+      name: "XYZ Electronics",
+      category: "Electronics",
+      description: "Best deals on electronics",
+      whatsappNumber: "1234567890",
+      image: "/images/store1.jpg",
+    },
+    {
+      id: 2,
+      name: "ABC Electronics",
+      category: "Electronics",
+      description: "Latest gadgets and tech",
+      whatsappNumber: "1234567891",
+      image: "/images/store3.jpg",
+    },
+    {
+      id: 3,
+      name: "Grocery Hub",
+      category: "Groceries",
+      description: "Fresh groceries at your doorstep",
+      whatsappNumber: "0987654321",
+      image: "/images/store2.jpg",
+    },
+    {
+      id: 4,
+      name: "Daily Fresh Groceries",
+      category: "Groceries",
+      description: "Organic and fresh groceries",
+      whatsappNumber: "0987654322",
+      image: "/images/store4.jpg",
+    },
+    // Add more stores here...
+  ];
 
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged(async (currentUser) => {
@@ -243,13 +325,16 @@ export default function Home() {
   return (
     <div>
       <Navbar />
-      <div>
+      {/* <div>
         {user ? <CustomHeroSection userName={userName} /> : <HeroSection />}
-      </div>
-      <CategorySection />
+      </div> */}
+      <HeroSection />
+      {/* <CategorySection /> */}
       <NewArrivals />
+      {/* <NewArrivals /> */}
       <PopularProducts />
-      <DispatchOrder />
+      <ConnectWithBusinesses stores={stores} />
+      {/* <DispatchOrder /> */}
       <FAQSection />
       <Footer />
       <ScrollToTopButton />
