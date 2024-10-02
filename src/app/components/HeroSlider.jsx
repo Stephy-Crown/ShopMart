@@ -969,7 +969,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState, useEffect } from "react";
-import { CheckCircleIcon } from "@heroicons/react/24/outline";
+import { CheckCircleIcon } from "@heroicons/react/outline";
 import shopmartHero from "../public/couriers-delivering-package_1030879-47607.jpg";
 import ServicesSlider from "../components/ServicesSlider";
 
