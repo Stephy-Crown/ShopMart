@@ -561,12 +561,12 @@ const LoginForm = () => {
 
     try {
       await signInWithPopup(auth, provider);
-      showToast("Login with Google successful!", "#4CAF50"); // Green color for success
+      // showToast("Login with Google successful!", "#4CAF50"); // Green color for success
       router.push("/"); // Redirect to the home page after login
     } catch (err) {
       console.error(err);
       setError(err.message); // Display error message
-      showToast(err.message, "#F44336"); // Red color for error
+      // showToast(err.message, "#F44336"); // Red color for error
     } finally {
       setLoadingGoogle(false); // Reset loading state
     }
