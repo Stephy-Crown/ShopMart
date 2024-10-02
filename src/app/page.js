@@ -276,7 +276,7 @@ export default function Home() {
       category: "Electronics",
       description: "Best deals on electronics",
       whatsappNumber: "1234567890",
-      image: "/images/store1.jpg",
+      // image: "/images/store1.jpg",
     },
     {
       id: 2,
@@ -284,7 +284,7 @@ export default function Home() {
       category: "Electronics",
       description: "Latest gadgets and tech",
       whatsappNumber: "1234567891",
-      image: "/images/store3.jpg",
+      // image: "/images/store3.jpg",
     },
     {
       id: 3,
@@ -292,7 +292,7 @@ export default function Home() {
       category: "Groceries",
       description: "Fresh groceries at your doorstep",
       whatsappNumber: "0987654321",
-      image: "/images/store2.jpg",
+      // image: "/images/store2.jpg",
     },
     {
       id: 4,
@@ -300,7 +300,7 @@ export default function Home() {
       category: "Groceries",
       description: "Organic and fresh groceries",
       whatsappNumber: "0987654322",
-      image: "/images/store4.jpg",
+      // image: "/images/store4.jpg",
     },
     // Add more stores here...
   ];
