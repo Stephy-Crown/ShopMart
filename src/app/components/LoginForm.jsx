@@ -573,13 +573,13 @@ const LoginForm = () => {
   };
 
   return (
-    <div className="w-full max-w-[85vw] lg:max-w-md p-8 space-y-4 bg-white rounded-xl shadow-lg mt-20">
+    <div className="w-full max-w-[85vw] lg:max-w-md p-8 space-y-4 bg-white rounded-xl shadow-lg mt-7">
       <h2 className="text-lg lg:text-2xl font-bold text-center text-[#003366] lg:pt-4">
         Login
       </h2>
       <form
         onSubmit={handleLogin}
-        className="space-y-4 lg:space-y-6 pb-11 lg:pb-10"
+        className="space-y-4 lg:space-y-6 pb-3 lg:pb-10"
       >
         <div>
           <label className="block mb-2 text-sm font-medium text-gray-700">
@@ -608,7 +608,7 @@ const LoginForm = () => {
         {error && <p className="text-sm text-red-600">{error}</p>}
         <button
           type="submit"
-          className="w-full flex justify-center px-4 pt-2 pb-3 font-medium text-white hover:bg-gradient-to-r hover:from-[#234c72] hover:to-[#3b7cb8] bg-gradient-to-r from-[#003366] to-[#1e69b5] bg-[#2465a5] hover:bg-[#21578e] rounded focus:outline-none focus:ring-2 focus:ring-indigo-500"
+          className="w-full flex justify-center px-4 pt-2 pb-3 font-medium text-white bg-gradient-to-r from-[#557C56] to-[#3D593E] hover:bg-[##3D593E] rounded focus:outline-none focus:ring-2 focus:ring-indigo-500"
         >
           {loadingEmail ? (
             <div className="border-2 border-gray-300 border-t-2 border-t-transparent rounded-full w-5 h-5 spinner"></div>
@@ -634,13 +634,13 @@ const LoginForm = () => {
       </button>
 
       {/* Toast Notification */}
-      {toast.visible && (
+      {/* {toast.visible && (
         <Toast
           message={toast.message}
           color={toast.color}
           onClose={() => setToast({ ...toast, visible: false })}
         />
-      )}
+      )} */}
     </div>
   );
 };

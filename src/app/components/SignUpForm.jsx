@@ -1654,7 +1654,7 @@ const SignUpForm = ({ toggleMode }) => {
         {error && <p className="text-sm text-red-600">{error}</p>}
         <button
           type="submit"
-          className="w-full flex justify-center px-4 py-2 font-medium text-white hover:bg-gradient-to-r hover:from-[#234c72] hover:to-[#3b7cb8] bg-gradient-to-r from-[#003366] to-[#1e69b5] bg-[#2465a5] hover:bg-[#21578e] rounded focus:outline-none focus:ring-2 focus:ring-indigo-500"
+          className="w-full flex justify-center px-4 py-2 font-medium text-white bg-gradient-to-r from-[#557C56] to-[#3D593E] hover:bg-[##3D593E] rounded focus:outline-none focus:ring-2 focus:ring-indigo-500"
         >
           {loadingEmail ? (
             <div className="border-2 border-gray-300 border-t-2 border-t-transparent rounded-full w-5 h-5 spinner"></div>

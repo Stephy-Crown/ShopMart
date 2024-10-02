@@ -972,9 +972,23 @@ import { useState, useEffect } from "react";
 import { CheckCircleIcon } from "@heroicons/react/outline";
 import shopmartHero from "../public/couriers-delivering-package_1030879-47607.jpg";
 import ServicesSlider from "../components/ServicesSlider";
+import { onAuthStateChanged, signOut } from "firebase/auth"; // Firebase imports
+import { auth } from "../lib/firebase"; // Ensure this points to your firebase config
 
 export default function HeroSection() {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(false); // default: user is not logged in
+
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+      if (user) {
+        setIsLoggedIn(true);
+      } else {
+        setIsLoggedIn(false);
+      }
+    });
+    return () => unsubscribe();
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -990,7 +1004,7 @@ export default function HeroSection() {
   return (
     <div>
       {/* Hero Section */}
-      <div className="relative h-screen pt-15">
+      <div className="relative md:h-screen h-[500px] pt-15">
         <Image
           src={shopmartHero}
           alt="Hero Background"
@@ -1026,17 +1040,27 @@ export default function HeroSection() {
             </div>
             <div className="hidden md:block">
               {" "}
-              <Link href="/authentication" className="flex justify-center ">
+              {/* <Link href="/authentication" className="flex justify-center ">
                 <button className="mt-10 ml-10 text-2xl bg-gradient-to-l from-[#557C56] to-[#3D593E] text-white px-4 py-2 text rounded-lg">
                   Join ShopMart Today!
                 </button>
-              </Link>
+              </Link> */}
+              {!isLoggedIn ? (
+                <>
+                  {" "}
+                  <Link href="/authentication" className="flex justify-center ">
+                    <button className="mt-10 ml-10 text-2xl bg-gradient-to-l from-[#557C56] to-[#3D593E] text-white px-4 py-2 text rounded-lg">
+                      Join ShopMart Today!
+                    </button>
+                  </Link>
+                </>
+              ) : null}
             </div>
           </div>
 
           {/* Bullet Points and Get Started Button for Mobile */}
           <div className="md:hidden flex-col mt-6">
-            <div className="flex flex-col  pl-20">
+            <div className="flex flex-col  pl-24">
               <div className="flex  ">
                 <CheckCircleIcon className="w-5  mb-2 text-[#e8af9b] mr-2" />
                 <span className=" text-[#f0e7dd]  text-sm">
@@ -1062,11 +1086,22 @@ export default function HeroSection() {
                 </span>
               </div>
             </div>
-            <Link href="/authentication" className="flex justify-center">
-              <button className="mt-6  bg-gradient-to-l from-[#557C56] to-[#3D593E] text-[#f0e7dd]  px-4 py-2 rounded-lg">
-                Join ShopMart Today!
-              </button>
-            </Link>
+            {!isLoggedIn ? (
+              <>
+                {" "}
+                <Link href="/authentication" className="flex justify-center ">
+                  <button className="mt-10  text-sm bg-gradient-to-l from-[#557C56] to-[#3D593E] text-white px-4 py-2 text rounded-lg">
+                    Join ShopMart Today!
+                  </button>
+                </Link>
+              </>
+            ) : (
+              <Link href="/explore-stores" className="flex justify-center ">
+                <button className="mt-10  text-sm bg-gradient-to-l from-[#557C56] to-[#3D593E] text-white px-4 py-2 text rounded-lg">
+                  Explore Our Stores
+                </button>
+              </Link>
+            )}
           </div>
         </div>
       </div>
@@ -1084,7 +1119,7 @@ export default function HeroSection() {
                 Get to discover a wide variety of stores offering unique
                 products and deals tailored just for your needs.
               </p>
-              <Link href="/stores">
+              <Link href="/explore-stores">
                 <button className="bg-green-600 hover:bg-green-700 text-white py-2 px-[5px] rounded-lg text-[10px] md:text-sm">
                   Explore Our Stores
                 </button>

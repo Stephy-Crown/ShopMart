@@ -417,7 +417,7 @@ const ExploreStores = () => {
       id: 1,
       name: "Store A",
       description: "Amazing deals on electronics.",
-      logo: "/store-a-logo.png",
+      // logo: "/store-a-logo.png",
       link: "/stores/store-a", // Update to your store page path
       whatsappLink: "https://wa.me/1234567890?text=Hello%20Store%20A%21",
     },
@@ -425,7 +425,7 @@ const ExploreStores = () => {
       id: 2,
       name: "Store B",
       description: "Trendy fashion for everyone.",
-      logo: "/store-b-logo.png",
+      // logo: "/store-b-logo.png",
       link: "/stores/store-b", // Update to your store page path
       whatsappLink: "https://wa.me/1234567891?text=Hello%20Store%20B%21",
     },
@@ -433,7 +433,7 @@ const ExploreStores = () => {
       id: 3,
       name: "Store C",
       description: "Quality home goods at great prices.",
-      logo: "/store-c-logo.png",
+      // logo: "/store-c-logo.png",
       link: "/stores/store-c", // Update to your store page path
       whatsappLink: "https://wa.me/1234567892?text=Hello%20Store%20C%21",
     },
@@ -453,13 +453,14 @@ const ExploreStores = () => {
         <h2 className="text-2xl font-semibold mb-4">Featured Stores</h2>
         <div className="flex overflow-x-auto space-x-4">
           {featuredStores.map((store) => (
-            <div key={store.id} className="min-w-[200px]">
+            <div key={store.id} className="min-w-[400px] px-1">
               <Link href={store.link}>
                 <div className="bg-white shadow-lg rounded-lg p-4 text-center">
                   <Image
                     src={store.logo}
                     alt={`${store.name} Logo`}
                     className="h-32 mx-auto mb-2"
+                    width={300}
                   />
                   <h3 className="text-lg font-medium">{store.name}</h3>
                   <p className="text-gray-500">{store.description}</p>
@@ -520,15 +521,15 @@ const ExploreStores = () => {
       </section>
 
       {/* Testimonials Section */}
-      <section className="mb-8">
-        <h3 className="text-xl font-semibold mb-4">What Our Customers Say</h3>
-        {/* <blockquote className="border-l-4 border-blue-600 pl-4 italic">
+      {/* <section className="mb-8">
+        <h3 className="text-xl font-semibold mb-4">What Our Customers Say</h3> */}
+      {/* <blockquote className="border-l-4 border-blue-600 pl-4 italic">
           "I found amazing deals at Store A!" - Customer Name
         </blockquote>
         <blockquote className="border-l-4 border-blue-600 pl-4 italic mt-2">
           "Store B has the best customer service!" - Customer Name
         </blockquote> */}
-      </section>
+      {/* </section> */}
 
       {/* Call to Action Section */}
       <section className="text-center">

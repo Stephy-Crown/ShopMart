@@ -6145,14 +6145,48 @@ export default function Navbar() {
             <SearchIcon className="w-6 h-6 text-white hover:text-gray-300" />
           </button>
 
-          <Link href="/authentication" className="flex items-center">
-            <UserIcon className="w-6 h-6 text-white hover:text-gray-300" />
+          <Link href="/authentication" className="flex items-center relative">
+            {!isLoggedIn ? (
+              <>
+                <UserIcon className="w-6 h-6" />
+              </>
+            ) : (
+              <div className="flex items-center cursor-pointer relative">
+                <Link href="/user-dashboard">
+                  <UserIcon className="w-6 h-6" />
+                </Link>
+                {/* Position CheckCircleIcon close to and beneath UserIcon */}
+                <CheckCircleIcon className="w-4 h-4 text-green-400 absolute -right-2 top-4" />
+              </div>
+            )}
           </Link>
-          <Link href="/authentication" className="w-16">
+
+          {/* <Link href="/authentication" className="w-16">
             <button className="bg-green-900 text-white px-4 rounded-2xl py-2">
               Sign Up
             </button>
-          </Link>
+          </Link> */}
+          {/* <Link href="/authentication">
+            <button className="bg-green-900 px-5 text-white rounded-full py-2">
+              Sign Up
+            </button>
+          </Link> */}
+          {!isLoggedIn ? (
+            <>
+              <Link href="/authentication">
+                <button className="bg-green-900 px-5 text-white rounded-full py-2">
+                  Sign Up
+                </button>
+              </Link>
+            </>
+          ) : (
+            <div className="relative">
+              <ShoppingCartIcon className="w-6 h-6 text-white" />
+              <span className="absolute -top-2 -right-0 bg-red-500 text-white text-xs px-2 py-0.5 rounded-full">
+                0
+              </span>
+            </div>
+          )}
           {/* <div className="relative">
             <ShoppingCartIcon className="w-6 h-6 text-white" />
             <span className="absolute -top-2 -right-0 bg-red-500 text-white text-xs px-2 py-0.5 rounded-full">
@@ -6193,6 +6227,17 @@ export default function Navbar() {
           >
             Help
           </Link>
+
+          {!isLoggedIn ? (
+            <></>
+          ) : (
+            <button
+              onClick={handleLogout} // Call the logout function
+              className="block w-full text-left  py-2 bg-yellow-700 px-5 hover:bg-gray-100"
+            >
+              Logout
+            </button>
+          )}
 
           {/* Search Suggestions Dropdown */}
           {searchQuery && (
